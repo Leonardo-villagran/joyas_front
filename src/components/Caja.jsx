@@ -12,7 +12,6 @@ const Caja = () => {
     const {urlSelect, datos, setDatos} = useContext(Context);
     //const url = process.env.REACT_APP_API_URL;
 
-    const url = process.env.REACT_APP_API_URL || urlSelect;
     console.log("soy la url en caja",urlSelect);
     
 
@@ -32,7 +31,7 @@ const Caja = () => {
     console.log("Soy datos despues del useeffect", datos);
 
     const handleLike = async (id, like) => {
-        const response = await fetch(`${url}/joyas/${id}`, {
+        const response = await fetch(`${urlSelect}/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -57,7 +56,7 @@ const Caja = () => {
     };
 
     async function handleDelete(id) {
-        const response = await fetch(`${url}/joyas/${id}`, {
+        const response = await fetch(`${urlSelect}/${id}`, {
             method: 'DELETE',
         });
         if (response.ok) {
