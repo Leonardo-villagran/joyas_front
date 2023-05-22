@@ -34,7 +34,7 @@ function FiltroForm() {
 
     // Este efecto se ejecuta cada vez que los valores de los hooks cambian
     React.useEffect(() => {
-        const urlbase = process.env.REACT_APP_API_URL || "http://127.0.0.1:3001/joyas/filtros";
+        const urlbase = `${process.env.REACT_APP_API_URL}/joyas/filtros` || "http://127.0.0.1:3001/joyas/filtros";
         const url = `${urlbase}?precio_min=${precio_min}&precio_max=${precio_max}&categoria=${categoria}&metal=${metal}`;
         console.log("soy la url en el seleccionador:", url);
         setUrlSelect(url);
