@@ -3,6 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import Context from '../Context/Context';
 import { AiFillHeart } from "react-icons/ai";
 import SeleccionadorView from "../views/SeleccionadorView";
+import FiltroView from "../views/FiltroView";
 
 
 //Vista de datos del home
@@ -76,6 +77,7 @@ const Caja = () => {
     return (
         <Container>
             {<SeleccionadorView />}
+            {<FiltroView />}
             <Row xs={1} sm={2} md={3} lg={4}>
             {/*<Col key='-1' className="d-flex align-items-stretch mb-3">
                     <FormView />
@@ -89,8 +91,8 @@ const Caja = () => {
                                 <Card.Title>{post.nombre}</Card.Title>
 
                                 <ul>
-                                    <li>Categoría:{post.metal}</li>
-                                    <li>Metal: {post.metal}</li>
+                                    <li>Categoría: {post.categoria[0].toUpperCase()+post.categoria.substring(1)}</li>
+                                    <li>Metal: {post.metal[0].toUpperCase()+post.metal.substring(1)}</li>
                                     <li>Stock: {post.stock}</li>
                                 </ul>
 
